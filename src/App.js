@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [advice, setAdvice] = useState("");
@@ -12,6 +12,13 @@ const App = () => {
     const newCount = count + 1;
     setCount(newCount);
   };
+
+  useEffect(() => {
+    // This will run when the component mounts
+    getAdvice();
+    // Empty array provided as second argument means the effect has no dependencies
+    // so it will run only once, when the component initially mounts
+  }, []);
 
   return (
     <div>
