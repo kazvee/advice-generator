@@ -26,10 +26,16 @@ const App = () => {
         {advice}
       </h1>
       <button onClick={getAdvice}>Get Advice</button>
-      <p>
-        You have received advice <strong>{count}</strong> times! 😃
-      </p>
+      <Message count={count} />
     </div>
+  );
+};
+
+const Message = (props) => {
+  return (
+    <p>
+      You have received advice <strong>{props.count}</strong> times! 😃
+    </p>
   );
 };
 
